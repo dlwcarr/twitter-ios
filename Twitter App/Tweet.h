@@ -11,14 +11,10 @@
 
 @property (nonatomic, retain) NSDate *createdAt;
 @property (nonatomic, retain) NSString *fromUser;
-@property (nonatomic, retain) NSNumber *fromUserID;
 @property (nonatomic, retain) NSString *fromUserName;
 @property (nonatomic, retain) NSNumber *tweetID;
 @property (nonatomic, retain) NSURL *profileImgURL;
 @property (nonatomic, retain) NSString *tweetText;
-@property (nonatomic, retain) NSString *toUser;
-@property (nonatomic, retain) NSNumber *toUserID;
-@property (nonatomic, retain) NSString *toUserName;
 
 - (NSString *)age;
 

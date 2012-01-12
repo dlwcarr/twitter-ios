@@ -12,14 +12,10 @@
 
 @synthesize createdAt;
 @synthesize fromUser;
-@synthesize fromUserID;
 @synthesize fromUserName;
 @synthesize tweetID;
 @synthesize profileImgURL;
 @synthesize tweetText;
-@synthesize toUser;
-@synthesize toUserID;
-@synthesize toUserName;
 
 //Returns a string to be displayed next to the tweet to show how long ago it was posted
 - (NSString *)age {

@@ -21,8 +21,12 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <scopeButtonTitles>
+                                        <string>Title</string>
+                                        <string>Title</string>
+                                    </scopeButtonTitles>
                                     <connections>
-                                        <outlet property="delegate" destination="2" id="OS2-KK-h6M"/>
+                                        <outlet property="delegate" destination="2" id="kSw-Dt-cs2"/>
                                     </connections>
                                 </searchBar>
                                 <prototypes>
@@ -93,19 +97,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="searchDisplayController" destination="wmt-fp-O0U" id="5Ox-xI-1t1"/>
+                        <outlet property="searchBar" destination="ceb-Xl-k9K" id="JSO-O4-gpu"/>
                         <outlet property="tweetsTable" destination="0dr-gk-UgA" id="GF2-az-ejb"/>
                     </connections>
                 </viewController>
-                <searchDisplayController id="wmt-fp-O0U">
-                    <connections>
-                        <outlet property="delegate" destination="2" id="iFf-Mm-kzm"/>
-                        <outlet property="searchBar" destination="ceb-Xl-k9K" id="qqL-57-EXe"/>
-                        <outlet property="searchContentsController" destination="2" id="4jO-HI-vVT"/>
-                        <outlet property="searchResultsDataSource" destination="2" id="05Q-Hb-5KJ"/>
-                        <outlet property="searchResultsDelegate" destination="2" id="R1f-Jc-Gs9"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
         </scene>
     </scenes>

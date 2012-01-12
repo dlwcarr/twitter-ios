@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TweetCell.h"
 
-@interface TwitterAppViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface TwitterAppViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tweetsTable;
 @property (strong, nonatomic) NSMutableArray *tweets;
@@ -18,9 +18,10 @@
 @property (strong, nonatomic) NSMutableDictionary *imageCache;
 @property (strong, nonatomic) UIImage *avatarPlaceholder;
 @property (nonatomic, assign) NSInteger *networkStatusCount;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 - (void) setNetworkActivityIndicator:(BOOL)setVisible;
-- (void) downloadTweets;
+- (void) downloadTweets:(NSString *)searchString isFromTimeline:(BOOL)isFromTimeline;
 - (void) downloadImage:(TweetCell *)cell;
 
 @end
