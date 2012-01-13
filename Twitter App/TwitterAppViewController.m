@@ -190,11 +190,14 @@
 }
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
-    searchBar.showsCancelButton = NO;
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     searchBar.showsCancelButton = NO;
+    if ([searchBar.text length] != 0) {
+        searchBar.text = @"";
+        [self downloadTweets:@"http://api.twitter.com/1/statuses/public_timeline.json" isFromTimeline:YES];
+    }
     [searchBar resignFirstResponder];
 }
 

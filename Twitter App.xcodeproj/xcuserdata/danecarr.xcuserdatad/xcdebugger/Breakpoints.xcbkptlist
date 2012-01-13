@@ -93,12 +93,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Twitter App/TwitterAppViewController.m"
-         timestampString = "348099494.70535"
+         timestampString = "348167056.925061"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "193"
-         endingLineNumber = "193"
-         landmarkName = "-searchBarTextDidEndEditing:"
+         startingLineNumber = "205"
+         endingLineNumber = "205"
+         landmarkName = "-searchBarSearchButtonClicked:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -107,12 +107,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Twitter App/TwitterAppViewController.m"
-         timestampString = "348099348.772551"
+         timestampString = "348167056.925061"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "202"
-         endingLineNumber = "202"
-         landmarkName = "-searchBarSearchButtonClicked:"
+         startingLineNumber = "196"
+         endingLineNumber = "196"
+         landmarkName = "-searchBarCancelButtonClicked:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
