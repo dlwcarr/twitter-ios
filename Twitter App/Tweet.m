@@ -20,7 +20,10 @@
 //Returns a string to be displayed next to the tweet to show how long ago it was posted
 - (NSString *)age {
     NSTimeInterval secondsSinceNow = -[self.createdAt timeIntervalSinceNow];
-    if (secondsSinceNow < 60.0) {
+    if (secondsSinceNow == 0) {
+        return @"1s";
+    }
+    else if (secondsSinceNow < 60.0) {
         NSNumber *seconds = [[NSNumber alloc] initWithInt:(int)secondsSinceNow];
         NSString *secondsString = [[NSString alloc] init];
         secondsString = [seconds stringValue];
