@@ -11,6 +11,7 @@
 #import "TweetCell.h"
 #import "SBJson.h"
 #import <QuartzCore/QuartzCore.h>
+#import "DetailViewController.h"
 
 
 @implementation TwitterAppViewController
@@ -23,6 +24,7 @@
 @synthesize avatarPlaceholder = _avatarPlaceholder;
 @synthesize networkStatusCount = _networkStatusCount;
 @synthesize searchBar = _searchBar;
+@synthesize navigationBar = _navigationBar;
 
 - (void)didReceiveMemoryWarning
 {
@@ -77,6 +79,17 @@
     else {
         return (expectedHeight + 40);
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    DetailViewController *detailViewController = (DetailViewController *) segue.destinationViewController;
+    detailViewController.tweet = [self.tweets objectAtIndex:[self.tweetsTable indexPathForCell:((UITableViewCell *)sender)].row];
 }
 
 - (void)setNetworkActivityIndicator:(BOOL)setVisible {
@@ -153,8 +166,8 @@
 }
 
 - (void) downloadImage:(TweetCell *)cell{
+    [self setNetworkActivityIndicator:YES];
     [self.imageOperationQueue addOperationWithBlock:^{
-        [self setNetworkActivityIndicator:YES];
         NSURL *cellURL = cell.profilePicURL;
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:cellURL];
         NSData *imageData = [NSURLConnection sendSynchronousRequest:request returningResponse: nil error:nil];
@@ -176,6 +189,7 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if (searchText == @"") {
+        self.navigationBar.title = @"Public Timeline";
         [self downloadTweets:@"http://api.twitter.com/1/statuses/public_timeline.json" isFromTimeline:YES];
         [searchBar resignFirstResponder];
     }
@@ -196,14 +210,34 @@
     searchBar.showsCancelButton = NO;
     if ([searchBar.text length] != 0) {
         searchBar.text = @"";
+        self.navigationBar.title = @"Public Timeline";
         [self downloadTweets:@"http://api.twitter.com/1/statuses/public_timeline.json" isFromTimeline:YES];
     }
     [searchBar resignFirstResponder];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    self.navigationBar.title = @"Search";
     NSString *searchText = searchBar.text;
     searchText = [searchText stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    searchText = [searchText stringByReplacingOccurrencesOfString:@"!" withString:@"%21"];
+    searchText = [searchText stringByReplacingOccurrencesOfString:@"#" withString:@"%23"];
+    searchText = [searchText stringByReplacingOccurrencesOfString:@"$" withString:@"%24"];
+    searchText = [searchText stringByReplacingOccurrencesOfString:@"&" withString:@"%26"];
+    searchText = [searchText stringByReplacingOccurrencesOfString:@"'" withString:@"%27"];
+    searchText = [searchText stringByReplacingOccurrencesOfString:@"(" withString:@"%28"];
+    searchText = [searchText stringByReplacingOccurrencesOfString:@")" withString:@"%29"];
+    searchText = [searchText stringByReplacingOccurrencesOfString:@"*" withString:@"%2A"];
+    searchText = [searchText stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
+    searchText = [searchText stringByReplacingOccurrencesOfString:@"," withString:@"%2C"];
+    searchText = [searchText stringByReplacingOccurrencesOfString:@"/" withString:@"%2F"];
+    searchText = [searchText stringByReplacingOccurrencesOfString:@":" withString:@"%3A"];
+    searchText = [searchText stringByReplacingOccurrencesOfString:@";" withString:@"%3B"];
+    searchText = [searchText stringByReplacingOccurrencesOfString:@"=" withString:@"%3D"];
+    searchText = [searchText stringByReplacingOccurrencesOfString:@"?" withString:@"%3F"];
+    searchText = [searchText stringByReplacingOccurrencesOfString:@"@" withString:@"%40"];
+    searchText = [searchText stringByReplacingOccurrencesOfString:@"[" withString:@"%5B"];
+    searchText = [searchText stringByReplacingOccurrencesOfString:@"]" withString:@"%5D"];
     NSString *searchURL = [NSString stringWithFormat:@"http://search.twitter.com/search.json?q=%@&rpp=25&include_entities=1&locale=en", searchText];
     [self downloadTweets:searchURL isFromTimeline:NO];
     [self.tweetsTable setNeedsDisplay];
@@ -230,6 +264,7 @@
 {
     [self setTweetsTable:nil];
     [self setSearchBar:nil];
+    [self setNavigationBar:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

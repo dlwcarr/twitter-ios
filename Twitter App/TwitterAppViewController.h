@@ -19,6 +19,7 @@
 @property (strong, nonatomic) UIImage *avatarPlaceholder;
 @property (nonatomic, assign) NSInteger *networkStatusCount;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navigationBar;
 
 - (void) setNetworkActivityIndicator:(BOOL)setVisible;
 - (void) downloadTweets:(NSString *)searchString isFromTimeline:(BOOL)isFromTimeline;

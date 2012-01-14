@@ -18,6 +18,7 @@
 		D95609FA14BB6EEA00E46B51 /* TwitterAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D95609F914BB6EEA00E46B51 /* TwitterAppViewController.m */; };
 		D9560A0614BB6FE100E46B51 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = D9560A0514BB6FE100E46B51 /* Tweet.m */; };
 		D9560A1114BB8DE600E46B51 /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9560A1014BB8DE600E46B51 /* TweetCell.m */; };
+		D97503A714C0B86B00903A08 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D97503A614C0B86B00903A08 /* DetailViewController.m */; };
 		D9831E9E14BC9D0B00AEF315 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = D9831E8614BC9D0B00AEF315 /* NSObject+SBJson.m */; };
 		D9831E9F14BC9D0B00AEF315 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D9831E8914BC9D0B00AEF315 /* SBJsonParser.m */; };
 		D9831EA014BC9D0B00AEF315 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D9831E8B14BC9D0B00AEF315 /* SBJsonStreamParser.m */; };
@@ -53,6 +54,8 @@
 		D9560A0514BB6FE100E46B51 /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
 		D9560A0F14BB8DE600E46B51 /* TweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = "<group>"; };
 		D9560A1014BB8DE600E46B51 /* TweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
+		D97503A514C0B86B00903A08 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = "Twitter App/Classes/DetailViewController.h"; sourceTree = "<group>"; };
+		D97503A614C0B86B00903A08 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = "Twitter App/Classes/DetailViewController.m"; sourceTree = "<group>"; };
 		D9831E8514BC9D0B00AEF315 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		D9831E8614BC9D0B00AEF315 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
 		D9831E8714BC9D0B00AEF315 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
@@ -98,6 +101,8 @@
 		D95609D414BB6EEA00E46B51 = {
 			isa = PBXGroup;
 			children = (
+				D97503A514C0B86B00903A08 /* DetailViewController.h */,
+				D97503A614C0B86B00903A08 /* DetailViewController.m */,
 				D95609E914BB6EEA00E46B51 /* Twitter App */,
 				D95609E214BB6EEA00E46B51 /* Frameworks */,
 				D95609E014BB6EEA00E46B51 /* Products */,
@@ -267,6 +272,7 @@
 				D9831EA814BC9D0B00AEF315 /* SBJsonUTF8Stream.m in Sources */,
 				D9831EA914BC9D0B00AEF315 /* SBJsonWriter.m in Sources */,
 				D9361E5214BF5BE300EDD5AE /* TweetLabel.m in Sources */,
+				D97503A714C0B86B00903A08 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
